@@ -31,7 +31,7 @@ int	ft_count_if(char **tab, int length, int(*f)(char*))
 	return (count);
 }
 
-/*
+/* main
 #include <stdio.h>
 int	main(int argc, char **argv)
 {
