@@ -1,4 +1,7 @@
-void	ft_putstr(char *str);
+int	ft_checker(int second, char operator);
+int	ft_calculator(int first, int second, char operator);
+int	ft_atoi(char *str);
+void	ft_putchar(char ch);
 
 int	main(int argc, char **argv)
 {
@@ -7,13 +10,16 @@ int	main(int argc, char **argv)
 		int		first;
 		char	operator;
 		int		second;
+		int		flag;
 
-		first = argv[1]; 
+		first = ft_atoi(argv[1]); 
 		operator = argv[2][0];
-		second = argv[3];
-		if (second == 0)
-			ft_putstr("Stop : ... by zero");
-		ft_calculator(first, operator, second);
+		second = ft_atoi(argv[3]);
+		flag = ft_checker(second, operator);
+		if (flag == 1)
+			ft_calculator(first, second, operator);
+		else
+			ft_putchar('0');
 	}
 	return (0);
 }
